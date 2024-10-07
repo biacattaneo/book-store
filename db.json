@@ -1,0 +1,10 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Harry Potter e a Pedra Filosofal",
+      "autor": "J.K. Rowling",
+      "editora": "Rocco"
+    }
+  ]
+}

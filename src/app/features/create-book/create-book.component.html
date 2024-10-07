@@ -1,1 +1,34 @@
-<p>create-book works!</p>
+<div class="form-content-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field>
+      <mat-label aria-label="Título">Título</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="title"
+        placeholder="Título"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label aria-label="Autor(a)">Autor(a)</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="autor"
+        placeholder="Autor(a)"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label aria-label="Editora">Editora</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="editora"
+        placeholder="Editora"
+      />
+    </mat-form-field>
+    <button id="btn-save-book" type="submit" mat-raised-button color="primary">
+      Salvar
+    </button>
+  </form>
+</div>

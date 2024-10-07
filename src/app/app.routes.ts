@@ -4,11 +4,11 @@ import { CreateBookComponent } from './features/create-book/create-book.componen
 
 export const routes: Routes = [
   {
-  path: '',
-  component: ListComponent
-},
+    path: '',
+    component: ListComponent
+  },
   {
     path: 'create-book',
-    component: CreateBookComponent
+    loadComponent: () => import('./features/create-book/create-book.component').then((m) => m.CreateBookComponent),
   }
 ];

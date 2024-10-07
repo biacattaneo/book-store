@@ -12,6 +12,7 @@ import type { Books } from '../../../../shared/interfaces/books.interface';
 })
 export class CardComponent {
 
-  book = input.required<Books>();
-  bookTitle = computed(() => this.book().title);
+  books = input.required<Books>();
+  // bookTitle = computed(() => this.book().title);
+  book = computed(() => this.books());
 }
