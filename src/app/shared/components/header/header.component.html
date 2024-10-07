@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon
+      svgIcon="burguer-menu"
+      aria-hidden="false"
+      aria-label="burguer-menu"
+    ></mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button aria-label="Livros" mat-menu-item>Livros</button>
+    <button aria-label="Editoras" mat-menu-item>Editoras</button>
+  </mat-menu>
+  <div class="container">
+    <title class="title" aria-label="title">Livraria da Beatriz</title>
+    <!-- TODO: change class to id, and id for tests -->
+  </div>
+</mat-toolbar>
