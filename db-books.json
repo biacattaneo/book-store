@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Harry Potter e a Pedra Filosofal"
     }
   ]
