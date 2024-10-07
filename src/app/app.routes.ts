@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ListComponent } from './features/components/list/list.component';
+import { ListComponent } from './features/list/list.component';
 
 export const routes: Routes = [{
   path: '',
