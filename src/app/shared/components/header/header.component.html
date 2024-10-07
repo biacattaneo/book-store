@@ -3,6 +3,7 @@
     mat-icon-button
     [matMenuTriggerFor]="menu"
     aria-label="Example icon-button with a menu"
+    id="btn-burguer-menu"
   >
     <mat-icon
       svgIcon="burguer-menu"
@@ -11,8 +12,16 @@
     ></mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button aria-label="Livros" mat-menu-item>Livros</button>
-    <button aria-label="Editoras" mat-menu-item>Editoras</button>
+    <button id="btn-menu-books" aria-label="Livros" mat-menu-item>
+      Livros
+    </button>
+    <button
+      id="btn-burguer-publishing-house"
+      aria-label="Editoras"
+      mat-menu-item
+    >
+      Editoras
+    </button>
   </mat-menu>
   <div class="container">
     <title class="title" aria-label="title">Livraria da Beatriz</title>
