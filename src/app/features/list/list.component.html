@@ -3,5 +3,6 @@
 </div>
 
 @for (book of books; track book.id) {
-  <app-card [books]="book" />
+  <!-- <app-card [books]="book" /> -->
+  <app-card [books]="book" (edit)="onEdit(book)"></app-card>
 }

@@ -13,7 +13,15 @@ export class BooksService {
     return this.httpClient.get<Books[]>('/api/books');
   }
 
+  get(id: string) {
+    return this.httpClient.get<Books>(`/api/books/${id}`);
+  }
+
   post(payload: BooksPayload) {
     return this.httpClient.post('/api/books', payload);
+  }
+
+  put(id: string, payload: BooksPayload) {
+    return this.httpClient.put(`/api/books/${id}`, payload);
   }
 }

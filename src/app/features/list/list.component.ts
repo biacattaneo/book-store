@@ -3,7 +3,7 @@ import { BooksService } from '../../shared/services/books.service';
 import type { Books } from '../../shared/interfaces/books.interface';
 import { CardComponent } from './components/card/card.component';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -15,10 +15,16 @@ import { RouterLink } from '@angular/router';
 export class ListComponent {
   books: Books[] = [];
   booksService= inject(BooksService);
+  router = inject(Router);
 
   ngOnInit(){
     this.booksService.getAll().subscribe((books) => {
       this.books = books;
     })
+  }
+
+  onEdit(book: Books) {
+    console.log(book);
+    this.router.navigate(['/edit-book', book.id]);
   }
 }
