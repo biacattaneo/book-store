@@ -37,13 +37,11 @@ export class EditBookComponent {
   });
 
   onSubmit(book: Books) {
-    // const book: Books = this.form.value as Books;
     this.booksService.put(this.book.id, book)
       .pipe(filter(() => this.form.controls.title.status === 'VALID' && this.form.controls.autor.status === 'VALID' && this.form.controls.editora.status === 'VALID'))
       .subscribe(() => {
         this.matSnackBar.open('Livro atualizado com sucesso', 'OK');
         this.router.navigateByUrl('/');
       })
-    this.matSnackBar.open('Campos obrigatórios');
   }
 }

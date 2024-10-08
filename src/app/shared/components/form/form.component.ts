@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Books } from '../../interfaces/books.interface';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -14,6 +15,7 @@ import { Books } from '../../interfaces/books.interface';
 })
 export class FormComponent {
 
+  matSnackBar = inject(MatSnackBar);
   @Output() send = new EventEmitter<Books>();
   @Input() book: Books | null = null;
 
@@ -35,18 +37,12 @@ export class FormComponent {
       }),
     });
   }
-  onFormSubmit(book: Books) {
-    console.log('Book data received from form:', book);
-  }
 
   onSubmit(event: any) {
-    console.log('Book data received from form2:', event)
-    if (this.form.valid) {
+    if (this.form.status === 'VALID') {
       const book = this.form.value as Books;
-      console.log(1);
       this.send.emit(book);
     }
-    else
-    console.log(2);
+    this.matSnackBar.open('Campos obrigatórios');
   }
 }

@@ -24,7 +24,6 @@ export class ListComponent {
   }
 
   onEdit(book: Books) {
-    console.log(book);
     this.router.navigate(['/edit-book', book.id]);
   }
 }

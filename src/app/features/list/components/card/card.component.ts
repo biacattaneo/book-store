@@ -20,7 +20,6 @@ export class CardComponent {
   book = computed(() => this.books());
 
   onEdit() {
-    console.log(1);
     this.edit.emit();
   }
 
