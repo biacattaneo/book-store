@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { BooksService } from '../../shared/services/books.service';
 import type { Books } from '../../shared/interfaces/books.interface';
 import { CardComponent } from './components/card/card.component';
 import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
 
@@ -16,15 +16,16 @@ import { ConfirmationDialogService } from '../../shared/services/confirmation-di
 })
 export class ListComponent {
 
-  books: Books[] = [];
+  books = signal<Books[]>(inject(ActivatedRoute).snapshot.data['books']);
+
   booksService = inject(BooksService);
   router = inject(Router);
   confirmationDialogService = inject(ConfirmationDialogService);
 
   ngOnInit() {
     this.booksService.getAll().subscribe((books) => {
-      this.books = books;
-    })
+      this.books.set(books);
+    });
   }
 
   onEdit(book: Books) {

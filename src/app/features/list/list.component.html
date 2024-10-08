@@ -2,6 +2,6 @@
   <a mat-raised-button color="primary" [routerLink]="['/create-book']">Criar novo Livro</a>
 </div>
 
-@for (book of books; track book.id) {
+@for (book of books(); track book.id) {
   <app-card [books]="book" (edit)="onEdit(book)" (delete)="onDelete(book)"/>
 }
