@@ -3,5 +3,12 @@
 </div>
 
 @for (book of books(); track book.id) {
-  <app-card [books]="book" (edit)="onEdit(book)" (delete)="onDelete(book)"/>
+  @defer (on immediate) {
+    <app-card [books]="book" (edit)="onEdit(book)" (delete)="onDelete(book)"/>
+  }
+}
+@empty {
+  @defer (on immediate) {
+    <app-no-items/>
+  }
 }
