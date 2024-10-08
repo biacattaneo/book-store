@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, input, Output } from '@angular/core';
+import { Component, computed, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import type { Books } from '../../../../shared/interfaces/books.interface';
@@ -9,16 +9,15 @@ import { BookComponent } from "../../../../shared/icons/book/book.component";
   standalone: true,
   imports: [MatCardModule, MatButtonModule, BookComponent],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrls: ['./card.component.scss'] // Corrigi o nome do atributo
 })
 export class CardComponent {
+  @Input({ required: true }) books!: Books; // Use Books diretamente
 
-  books = input.required<Books>();
+  @Output() edit = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
 
-  @Output() edit = new EventEmitter();
-  @Output() delete = new EventEmitter();
-
-  book = computed(() => this.books());
+  book = computed(() => this.books); // Computed a partir do books direto
 
   onEdit() {
     this.edit.emit();

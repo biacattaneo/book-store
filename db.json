@@ -7,10 +7,10 @@
       "editora": "Rocco"
     },
     {
-      "id": "2",
       "title": "Harry Potter e a Câmara Secreta",
       "autor": "J.K. Rowling",
-      "editora": "Rocco"
+      "editora": "Rocco",
+      "id": "2"
     },
     {
       "id": "3",

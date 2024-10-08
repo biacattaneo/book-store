@@ -1,16 +1,16 @@
-<div class="card-container">
-  <mat-card class="card-content">
+<div class="card-container" id="card-container">
+  <mat-card class="card-content" id="card-content">
     <mat-card-header>
-    <mat-card-title>{{ book().title }}</mat-card-title>
-  </mat-card-header>
-  <app-book class="card-img-book"></app-book>
-  <mat-card-content>
-    <p><strong>Autor(a):</strong> {{book().autor}}</p>
-    <p><strong>Editora:</strong> {{book().editora}}</p>
-  </mat-card-content>
-  <mat-card-actions class="card-actions">
-    <button mat-button (click)="onEdit()">Editar</button>
-    <button mat-button (click)="onDelete()" >Deletar</button>
-  </mat-card-actions>
-</mat-card>
+      <mat-card-title id="card-title">{{ book().title }}</mat-card-title>
+    </mat-card-header>
+    <app-book class="card-img-book" id="card-book-img"></app-book>
+    <mat-card-content>
+      <p><strong>Autor(a):</strong> <span id="card-author">{{ book().autor }}</span></p>
+      <p><strong>Editora:</strong> <span id="card-publisher">{{ book().editora }}</span></p>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <button mat-button id="card-edit-button" (click)="onEdit()">Editar</button>
+      <button mat-button id="card-delete-button" (click)="onDelete()">Deletar</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

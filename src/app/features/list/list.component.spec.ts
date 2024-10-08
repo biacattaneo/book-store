@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list.component';
+import { BooksService } from '../../shared/services/books.service';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -8,10 +10,11 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListComponent]
+      imports: [RouterTestingModule, HttpClientModule, ListComponent],
+      providers: [BooksService]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
