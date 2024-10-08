@@ -16,6 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class FormComponent {
 
   matSnackBar = inject(MatSnackBar);
+
   @Output() send = new EventEmitter<Books>();
   @Input() book: Books | null = null;
 
@@ -38,7 +39,7 @@ export class FormComponent {
     });
   }
 
-  onSubmit(event: any) {
+  onSubmit(event: Event) {
     if (this.form.status === 'VALID') {
       const book = this.form.value as Books;
       this.send.emit(book);

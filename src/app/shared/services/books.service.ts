@@ -24,4 +24,8 @@ export class BooksService {
   put(id: string, payload: BooksPayload) {
     return this.httpClient.put(`/api/books/${id}`, payload);
   }
+
+  delete(id: string) {
+    return this.httpClient.delete(`/api/books/${id}`);
+  }
 }
