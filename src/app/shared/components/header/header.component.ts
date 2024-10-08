@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 const BURGUER_MENU_ICON =
   `
@@ -13,7 +14,7 @@ const BURGUER_MENU_ICON =
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

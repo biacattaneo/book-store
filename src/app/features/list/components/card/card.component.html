@@ -3,12 +3,12 @@
     <mat-card-header>
     <mat-card-title>{{ book().title }}</mat-card-title>
   </mat-card-header>
-  <img
-  mat-card-sm-image
-  src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-  alt="Photo of a Shiba Inu"
-  />
-  <mat-card-actions>
+  <app-book class="card-img-book"></app-book>
+  <mat-card-content>
+    <p><strong>Autor(a):</strong> {{book().autor}}</p>
+    <p><strong>Editora:</strong> {{book().editora}}</p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
     <button mat-button (click)="onEdit()">Editar</button>
     <button mat-button (click)="onDelete()" >Deletar</button>
   </mat-card-actions>

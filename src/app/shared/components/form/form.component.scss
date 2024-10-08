@@ -8,11 +8,12 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .form-content-container {
   width: 100%;
   display: flex;
+  width: 50%;
+  margin-left: 25%;
   flex-direction: column;
 }

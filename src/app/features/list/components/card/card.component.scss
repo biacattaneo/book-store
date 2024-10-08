@@ -4,8 +4,13 @@
   width: 100%;
 }
 
-img {
+.card-img-book {
   width: 90%;
-  margin-left: 5%;
   height: auto;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.card-actions{
+  justify-content: space-around;
 }
