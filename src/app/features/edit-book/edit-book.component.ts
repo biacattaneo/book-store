@@ -6,11 +6,12 @@ import { filter } from 'rxjs';
 import { BooksService } from '../../shared/services/books.service';
 import type { Books } from '../../shared/interfaces/books.interface';
 import { FormComponent } from '../../shared/components/form/form.component';
+import { BackToHomeComponent } from '../../shared/components/back-to-home/back-to-home.component';
 
 @Component({
   selector: 'app-edit-book',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent, BackToHomeComponent],
   templateUrl: './edit-book.component.html',
   styleUrl: './edit-book.component.scss'
 })

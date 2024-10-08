@@ -2,14 +2,15 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import type { Books } from '../../shared/interfaces/books.interface';
 import { BooksService } from '../../shared/services/books.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormComponent } from '../../shared/components/form/form.component';
+import { BackToHomeComponent } from "../../shared/components/back-to-home/back-to-home.component";
 
 
 @Component({
   selector: 'app-create-book',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent, RouterLink, BackToHomeComponent, BackToHomeComponent],
   templateUrl: './create-book.component.html',
   styleUrl: './create-book.component.scss'
 })
