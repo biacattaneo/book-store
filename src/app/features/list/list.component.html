@@ -1,14 +1,24 @@
 <div class="action-container">
-  <a mat-raised-button color="primary" [routerLink]="['/create-book']">Criar novo Livro</a>
+  <a mat-raised-button color="primary" [routerLink]="['/create-book']"
+    >Criar novo Livro</a
+  >
 </div>
 
+<div class="list-container">
 @for (book of books(); track book.id) {
   @defer (on immediate) {
-    <app-card [books]="book" (edit)="onEdit(book)" (delete)="onDelete(book)"/>
+      <app-card
+        class="item-container"
+        [books]="book"
+        (edit)="onEdit(book)"
+        (delete)="onDelete(book)"
+      />
+    }
   }
-}
-@empty {
-  @defer (on immediate) {
-    <app-no-items/>
+
+  @empty {
+    @defer (on immediate) {
+      <app-no-items />
+    }
   }
-}
+</div>

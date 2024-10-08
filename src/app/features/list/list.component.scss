@@ -1,10 +1,15 @@
 .action-container {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 16px 0px;
+  padding: 16px 0;
 }
 
-.item-container {
-  display: block;
-  margin-bottom: 16px;
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
 }

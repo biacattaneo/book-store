@@ -1,15 +1,16 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <!-- <mat-card-title>{{ bookTitle() }}</mat-card-title> -->
+<div class="card-container">
+  <mat-card class="card-content">
+    <mat-card-header>
     <mat-card-title>{{ book().title }}</mat-card-title>
   </mat-card-header>
   <img
-    mat-card-image
-    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-    alt="Photo of a Shiba Inu"
+  mat-card-sm-image
+  src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+  alt="Photo of a Shiba Inu"
   />
   <mat-card-actions>
     <button mat-button (click)="onEdit()">Editar</button>
     <button mat-button (click)="onDelete()" >Deletar</button>
   </mat-card-actions>
 </mat-card>
+</div>

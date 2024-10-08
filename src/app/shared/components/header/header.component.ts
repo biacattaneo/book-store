@@ -19,9 +19,6 @@ const BURGUER_MENU_ICON =
 })
 export class HeaderComponent {
   constructor (iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    // Note that we provide the icon here as a string literal here due to a limitation in
-    // Stackblitz. If you want to provide the icon from a URL, you can use:
-    // `iconRegistry.addSvgIcon('burguer-menu', sanitizer.bypassSecurityTrustResourceUrl('icon.svg'));`
     iconRegistry.addSvgIconLiteral('burguer-menu', sanitizer.bypassSecurityTrustHtml(BURGUER_MENU_ICON));
   }
 }
