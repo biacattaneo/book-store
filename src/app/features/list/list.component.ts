@@ -7,11 +7,13 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
 import { NoItemsComponent } from './components/no-items/no-items.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AddIconComponent } from "../../shared/icons/add-icon/add-icon.component";
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent],
+  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent, MatIconModule, AddIconComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })

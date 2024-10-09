@@ -19,6 +19,11 @@ export class CardComponent {
 
   book = computed(() => this.books);
 
+  get truncatedTitle(): string {
+    const title = this.book().title;
+    return title.length > 30 ? `${title.substring(0, 30)}...` : title;
+  }
+
   onEdit() {
     this.edit.emit();
   }
