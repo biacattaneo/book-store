@@ -6,12 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { Books } from '../../interfaces/books.interface';
-import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule], // Incluindo MatSelectModule
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
@@ -23,10 +23,10 @@ export class FormComponent implements OnInit {
   @Input() book: Books | null = null;
 
   form!: FormGroup;
-  editoras: string[] = []; // Variável para armazenar as editoras carregadas do localStorage
+  editoras: string[] = [];
 
   ngOnInit(): void {
-    this.loadEditorasFromLocalStorage(); // Carregar editoras na inicialização
+    this.loadEditorasFromLocalStorage();
 
     this.form = new FormGroup({
       title: new FormControl<string>(this.book?.title ?? '', {
