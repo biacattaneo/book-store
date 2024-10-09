@@ -29,15 +29,14 @@
       />
     </mat-form-field>
 
-    <!-- <mat-form-field> -->
-      <mat-label>Imagem</mat-label>
+    <div class="form-image">
+      <mat-label aria-label="inserir imagem" class="form-label">Imagem</mat-label>
       <input
         type="file"
-        formControlName="image"
         (change)="onFileChange($event)"
         accept="image/*"
       />
-    <!-- </mat-form-field> -->
+    </div>
 
     <button id="btn-save-book" type="submit" mat-raised-button color="primary">
       Salvar

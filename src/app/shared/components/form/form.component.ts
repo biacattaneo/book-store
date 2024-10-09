@@ -46,7 +46,6 @@ export class FormComponent implements OnInit {
     event.preventDefault();
     if (this.form.status === 'VALID') {
       const book = this.form.value as Books;
-      console.log(book);
       this.send.emit(book);
       this.matSnackBar.open('Livro salvo com sucesso!', 'OK', { duration: 2000 });
     } else {

@@ -11,9 +11,18 @@
 }
 
 .form-content-container {
-  width: 100%;
   display: flex;
   width: 50%;
   margin-left: 25%;
   flex-direction: column;
+}
+
+.form-image {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0px 16px;
+}
+
+.form-image .form-label {
+  margin-bottom: 8px;
 }

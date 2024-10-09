@@ -1,14 +1,19 @@
 <div class="card-container" id="card-container">
   <mat-card class="card-content" id="card-content">
-    <mat-card-header>
-      <mat-card-title id="card-title">{{ truncatedTitle }}</mat-card-title>
+    <mat-card-header class="card-header-title">
+      <mat-card-title id="card-title" class="card-title">{{
+        truncatedTitle
+      }}</mat-card-title>
     </mat-card-header>
-    @if (book().image) {
-      <img class="card-img-book" src={{book().image}}/>
-    }
-    @else {
-      <app-book class="card-img-book" id="card-book-img"></app-book>
-    }
+    <div class="card-image-container">
+      <div class="card-image-content-container">
+        @if (book().image) {
+        <img class="card-img-book" src="{{ book().image }}" />
+        } @else {
+        <app-book class="card-icon-book" id="card-icon-book"></app-book>
+        }
+      </div>
+    </div>
     <mat-card-content>
       <p>
         <strong>Autor(a): </strong>

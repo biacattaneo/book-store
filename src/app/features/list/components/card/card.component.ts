@@ -21,7 +21,7 @@ export class CardComponent {
 
   get truncatedTitle(): string {
     const title = this.book().title;
-    return title.length > 30 ? `${title.substring(0, 30)}...` : title;
+    return title.length > 19 ? `${title.substring(0, 19)}...` : title;
   }
 
   onEdit() {
