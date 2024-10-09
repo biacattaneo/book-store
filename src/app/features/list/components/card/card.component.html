@@ -3,7 +3,12 @@
     <mat-card-header>
       <mat-card-title id="card-title">{{ truncatedTitle }}</mat-card-title>
     </mat-card-header>
-    <app-book class="card-img-book" id="card-book-img"></app-book>
+    @if (book().image) {
+      <img class="card-img-book" src={{book().image}}/>
+    }
+    @else {
+      <app-book class="card-img-book" id="card-book-img"></app-book>
+    }
     <mat-card-content>
       <p>
         <strong>Autor(a): </strong>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
 
   matSnackBar = inject(MatSnackBar);
 
@@ -36,14 +36,32 @@ export class FormComponent {
         nonNullable: true,
         validators: Validators.required
       }),
+      image: new FormControl<string | null>(this.book?.image ?? null, {
+        nonNullable: false
+      })
     });
   }
 
   onSubmit(event: Event) {
+    event.preventDefault();
     if (this.form.status === 'VALID') {
       const book = this.form.value as Books;
+      console.log(book);
       this.send.emit(book);
+      this.matSnackBar.open('Livro salvo com sucesso!', 'OK', { duration: 2000 });
+    } else {
+      this.matSnackBar.open('Preencha todos os campos obrigatórios.', 'OK', { duration: 2000 });
     }
-    this.matSnackBar.open('Campos obrigatórios');
+  }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.form.patchValue({ image: e.target.result });
+      };
+      reader.readAsDataURL(file);
+    }
   }
 }

@@ -18,6 +18,7 @@
         placeholder="Autor(a)"
       />
     </mat-form-field>
+
     <mat-form-field>
       <mat-label aria-label="Editora">Editora</mat-label>
       <input
@@ -27,6 +28,17 @@
         placeholder="Editora"
       />
     </mat-form-field>
+
+    <!-- <mat-form-field> -->
+      <mat-label>Imagem</mat-label>
+      <input
+        type="file"
+        formControlName="image"
+        (change)="onFileChange($event)"
+        accept="image/*"
+      />
+    <!-- </mat-form-field> -->
+
     <button id="btn-save-book" type="submit" mat-raised-button color="primary">
       Salvar
     </button>

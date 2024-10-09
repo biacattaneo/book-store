@@ -3,4 +3,5 @@ export interface Books {
   title: string;
   autor: string;
   editora: string;
+  image?: string;
 }
