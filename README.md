@@ -90,6 +90,61 @@ A estrutura de pastas foi feita para seguir a modularidade e a separação de re
 ```src/app/shared```
 : Módulo de _componentes_, _serviços_, _interfaces_ e _resolvers_ que podem ser compartilhados e reutilizados.
 
+### 5- Como implementar back-end real?
+
+
+Para implementar um back-end real é necessário alterar o arquivo **proxy.config.json** para a nova rota do servidor back-end real.
+
+```json
+//proxy.config.json
+{
+  "/api": {
+    "target": "http://seu-servidor:sua-porta/",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
+```
+O funcionamento padrão da aplicação poderá seguir se o novo servidor respeitar o contrato já praticado com o **json-server**.
+
+
+```ts
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import type { Books } from '../interfaces/books.interface';
+import type { BooksPayload } from '../interfaces/payload-books.interface';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BooksService {
+  httpClient = inject(HttpClient);
+
+  getAll() {
+    return this.httpClient.get<Books[]>('/api/books');
+  }
+
+  get(id: string) {
+    return this.httpClient.get<Books>(`/api/books/${id}`);
+  }
+
+  post(payload: BooksPayload) {
+    return this.httpClient.post('/api/books', payload);
+  }
+
+  put(id: string, payload: BooksPayload) {
+    return this.httpClient.put(`/api/books/${id}`, payload);
+  }
+
+  delete(id: string) {
+    return this.httpClient.delete(`/api/books/${id}`);
+  }
+}
+```
+
+Para fins de produção, outros cuidados precisam ser tomados, como considerar CORS, variáveis de ambiente e segurança.
+
 
 ## Authors
 
