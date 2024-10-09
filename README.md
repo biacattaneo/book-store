@@ -1,27 +1,69 @@
+
 # BookStore
+
+Este projeto é um CRUD de livros para uma livraria, utilizando JSON Server para Mock de API e imple mentações de testes com Karma e Jasmine para as principais features e services.
+
+O projeto utiliza SCSS, com Flex e Grid para melhor responsividade.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Demo
 
-## Code scaffolding
+<!-- TODO inserir demo aqui -->
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Run Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the project
 
-## Running unit tests
+```bash
+  git clone https://github.com/biacattaneo/book-store
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Go to the project directory
 
-## Running end-to-end tests
+```bash
+  cd book-store
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install dependencies
 
-## Further help
+```bash
+  npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the JSON Server
+
+```bash
+  npx json-server db.json
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Features
+
+- Create Book
+- Show all books
+- Update book
+- Delete book
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## Authors
+
+- [@biacattaneo](https://github.com/biacattaneo)
+
