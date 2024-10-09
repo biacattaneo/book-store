@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-book',
   standalone: true,
   imports: [],
-  templateUrl: './book.component.html',
-  styleUrl: './book.component.scss'
+  templateUrl: './book-icon.component.html',
+  styleUrl: './book-icon.component.scss'
 })
 export class BookComponent {
 
