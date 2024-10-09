@@ -21,3 +21,13 @@
   box-sizing: border-box;
   padding: 16px;
 }
+
+.no-items-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}

@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<div class="list-container">
+<div [ngClass]="books().length ? 'list-container' : 'no-items-active'">
 @for (book of books(); track book.id) {
   @defer (on immediate) {
       <app-card

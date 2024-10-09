@@ -9,11 +9,12 @@ import { ConfirmationDialogService } from '../../shared/services/confirmation-di
 import { NoItemsComponent } from './components/no-items/no-items.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AddIconComponent } from "../../shared/icons/add-icon/add-icon.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent, MatIconModule, AddIconComponent],
+  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent, MatIconModule, AddIconComponent, CommonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })

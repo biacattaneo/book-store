@@ -60,10 +60,7 @@ Rodar teste unitários
   npm run test
 ```
 
-
 ## Documentation
-
-[Documentation](https://linktodocumentation)
 
 A arquitetura do projeto foi planejada para ser escalável e fácil de manter, utilizando princípios de design como **modularidade**, **componentização** e **separação de responsabilidades**. Possibilitando que o projeto possa evoluir e se adaptar às necessidades, sem comprometer a qualidade ou a funcionalidade.
 
