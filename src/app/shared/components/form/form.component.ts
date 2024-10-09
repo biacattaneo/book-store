@@ -3,13 +3,15 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Books } from '../../interfaces/books.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { Books } from '../../interfaces/books.interface';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule], // Incluindo MatSelectModule
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
@@ -21,8 +23,11 @@ export class FormComponent implements OnInit {
   @Input() book: Books | null = null;
 
   form!: FormGroup;
+  editoras: string[] = []; // Variável para armazenar as editoras carregadas do localStorage
 
   ngOnInit(): void {
+    this.loadEditorasFromLocalStorage(); // Carregar editoras na inicialização
+
     this.form = new FormGroup({
       title: new FormControl<string>(this.book?.title ?? '', {
         nonNullable: true,
@@ -40,6 +45,16 @@ export class FormComponent implements OnInit {
         nonNullable: false
       })
     });
+  }
+
+  loadEditorasFromLocalStorage() {
+    const storedEditoras = localStorage.getItem('editoras');
+    if (storedEditoras) {
+      this.editoras = JSON.parse(storedEditoras);
+    } else {
+      this.editoras = ['Rocco', 'Arqueiro', 'Harper Collins'];
+      localStorage.setItem('editoras',JSON.stringify(this.editoras));
+    }
   }
 
   onSubmit(event: Event) {

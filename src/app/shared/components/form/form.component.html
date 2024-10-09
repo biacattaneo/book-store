@@ -9,6 +9,7 @@
         placeholder="Título"
       />
     </mat-form-field>
+
     <mat-form-field>
       <mat-label aria-label="Autor(a)">Autor(a)</mat-label>
       <input
@@ -19,14 +20,16 @@
       />
     </mat-form-field>
 
+    <!-- Editora Dropdown -->
     <mat-form-field>
       <mat-label aria-label="Editora">Editora</mat-label>
-      <input
-        matInput
-        type="text"
-        formControlName="editora"
-        placeholder="Editora"
-      />
+      <mat-select formControlName="editora">
+        @for (editora of editoras; track editora) {
+          <mat-option [value]="editora">
+            {{ editora }}
+          </mat-option>
+        }
+      </mat-select>
     </mat-form-field>
 
     <div class="form-image">
