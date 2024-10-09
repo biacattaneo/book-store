@@ -18,7 +18,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-<!-- TODO inserir demo aqui -->
+https://github.com/user-attachments/assets/208297e8-1bac-4c38-84b3-ee30b291b6a5
+
+
+https://github.com/user-attachments/assets/c6b5d660-b2f7-4d0b-99ae-b86b0946fc22
 
 
 ## Run Locally
